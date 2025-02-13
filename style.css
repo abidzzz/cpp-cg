@@ -31,8 +31,14 @@ input, select, button {
   background-color: #575279; /* Soft lavender background for inputs and buttons */
   color: #f5e0dc; /* Soft cream text */
   border: 1px solid #b09a93; /* Neutral, warm border */
-  width: 100%;
-  max-width: 400px;
+  width: 100%; /* Makes input elements take up the full width of the form */
+  max-width: 400px; /* Ensures the input width stays consistent */
+  box-sizing: border-box; /* Ensures padding is included in the element's total width */
+}
+
+
+select {
+  width: auto; /* Ensures the dropdown is not stretched out */
 }
 
 input:focus, select:focus, button:focus {

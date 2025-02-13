@@ -5,9 +5,13 @@ document.getElementById('addVariableButton').addEventListener('click', function 
     newFieldGroup.className = 'field-group';
     newFieldGroup.innerHTML = `
       <select class="variableType">
-        <option value="int">int</option>
-        <option value="double">double</option>
-        <option value="string">string</option>
+          <option value="int">int</option>
+          <option value="string">string</option>
+          <option value="float">float</option>
+          <option value="double">double</option>
+          <option value="char">char</option>
+          <option value="bool">bool</option>  
+          <option value="void">void</option>
       </select>
       <input type="text" class="variableName" placeholder="Variable name (e.g., x)">
       <button type="button" class="removeButton">Remove</button>
@@ -21,6 +25,15 @@ document.getElementById('addVariableButton').addEventListener('click', function 
     const newFieldGroup = document.createElement('div');
     newFieldGroup.className = 'field-group';
     newFieldGroup.innerHTML = `
+        <select class="variableType">
+          <option value="int">int</option>
+          <option value="string">string</option>
+          <option value="float">float</option>
+          <option value="double">double</option>
+          <option value="char">char</option>
+          <option value="bool">bool</option>  
+          <option value="void">void</option>
+        </select>
       <input type="text" class="inputStatement" placeholder="Input statement (e.g., cin >> x)">
       <button type="button" class="removeButton">Remove</button>
     `;
@@ -51,31 +64,31 @@ document.getElementById('addVariableButton').addEventListener('click', function 
   
       if (variableType && variableName) {
         // Add variable declaration
-        variables += `  ${variableType} ${variableName};\n`;
+        variables += `\t${variableType} ${variableName};\n`;
   
-        // Add input statement
-        inputStatements += `  cout << "Enter ${variableName}: ";\n`
-        inputStatements += `  cin >> ${variableName};\n`
-  
+        
         // Add output statement
-        outputStatements += `  cout << "${variableName}: " << ${variableName} << endl;\n`;
-      } else if (inputStatement) {
-        // Add custom input statement
-        inputStatements += `  ${inputStatement};\n`;
+        outputStatements += `\tcout << "${variableName}: " << ${variableName} << endl;\n`;
+      }
+      else if (inputStatement){
+        inputStatements += `\t${variableType} ${inputStatement};\n`;
+        inputStatements += `\tcout << "Enter ${inputStatement}: ";\n`
+        inputStatements += `\tcin >> ${inputStatement};\n`
       }
     });
+
   
     // Generate C++ code
     const code = `
-  #include <iostream>
-  using namespace std;
+#include <iostream>
+using namespace std;
   
-  int main() {
-  ${variables}
-  ${inputStatements}
-  ${outputStatements}
-    return 0;
-  }
+int main() {
+${variables}
+${inputStatements}
+${outputStatements}
+\treturn 0;
+}
   `;
   
     // Display generated code
