@@ -34,11 +34,14 @@ input, select, button {
   width: 100%; /* Makes input elements take up the full width of the form */
   max-width: 400px; /* Ensures the input width stays consistent */
   box-sizing: border-box; /* Ensures padding is included in the element's total width */
+  border-radius: 10px;
+  border: none;
 }
 
 
 select {
   width: auto; /* Ensures the dropdown is not stretched out */
+  background-color: #322f44;
 }
 
 input:focus, select:focus, button:focus {
