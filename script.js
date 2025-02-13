@@ -64,16 +64,28 @@ document.getElementById('addVariableButton').addEventListener('click', function 
   
       if (variableType && variableName) {
         // Add variable declaration
+        const variableNames = variableName.split(',').map(v => v.trim());
+        variableNames.forEach((variable, index) => {
+            if (index === 0) {
+                outputStatements += `\tcout << ${variable}`;
+            } else {
+                outputStatements += ` << " " << ${variable}`;
+            }
+        });
+        outputStatements += ` << endl;\n`;
         variables += `\t${variableType} ${variableName};\n`;
   
         
         // Add output statement
-        outputStatements += `\tcout << "${variableName}: " << ${variableName} << endl;\n`;
+        // outputStatements += `\tcout << "${variableName}: " << ${variableName} << endl;\n`;
       }
       else if (inputStatement){
         inputStatements += `\t${variableType} ${inputStatement};\n`;
-        inputStatements += `\tcout << "Enter ${inputStatement}: ";\n`
-        inputStatements += `\tcin >> ${inputStatement};\n`
+        const inputVars = inputStatement.split(',').map(v => v.trim());
+        inputVars.forEach(inputVar => {
+          inputStatements += `\tcout << "Enter ${inputVar}: ";\n`;
+          inputStatements += `\tcin >> ${inputVar};\n\n`;
+        });
       }
     });
 
@@ -99,6 +111,10 @@ ${outputStatements}
     const downloadButton = document.getElementById('downloadButton');
     downloadButton.style.display = 'block';
     downloadButton.onclick = () => downloadCode(code);
+
+    const copyButton = document.getElementById('copyButton');
+    copyButton.style.display = 'block';
+    
   });
   
   // Function to download the generated code as a .cpp file
@@ -111,3 +127,14 @@ ${outputStatements}
     a.click();
     URL.revokeObjectURL(url);
   }
+
+  document.getElementById('copyButton').addEventListener('click', function () {
+    const codeElement = document.getElementById('generatedCode');
+    const code = codeElement.textContent;
+    navigator.clipboard.writeText(code).then(function () {
+        alert('Code copied to clipboard!');
+    }).catch(function (err) {
+        alert('Error copying code: ' + err);
+    });
+  
+  })
