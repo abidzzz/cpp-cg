@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>C++ Code Generator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>C++ Code Generator</h1>
+  <form id="codeForm">
+    <div id="fieldsContainer">
+      <div class="field-group">
+        <select class="variableType">
+          <option value="int">int</option>
+          <option value="string">string</option>
+          <option value="float">float</option>
+          <option value="double">double</option>
+          <option value="char">char</option>
+          <option value="bool">bool</option>  
+          <option value="void">void</option>
+        </select>
+        <input type="text" class="variableName" placeholder="Variable name (e.g., x)">
+        <button type="button" class="removeButton">Remove</button>
+      </div>
+    </div>
+    <button type="button" id="addVariableButton">Add Variable</button>
+    <button type="button" id="addInputButton">Add Input Statement</button>
+    <button type="submit">Generate Code</button>
+  </form>
+
+  <h2>Generated Code:</h2>
+  <pre id="generatedCode"></pre>
+  <button id="downloadButton" style="display:none;">Download as .cpp</button>
+
+  <script src="script.js"></script>
+</body>
+</html>

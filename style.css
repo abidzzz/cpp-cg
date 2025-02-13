@@ -1,0 +1,67 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+  background-color: #1e1e2e; /* Dark, muted background for Catppuccin */
+  color: #f5e0dc; /* Soft cream text color */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* Ensures the content is vertically centered */
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 600px;
+  width: 100%; /* Ensures the form is responsive */
+  align-items: center; /* Centers the form elements horizontally */
+}
+
+input, select, button {
+  padding: 10px;
+  font-size: 16px;
+  background-color: #575279; /* Soft lavender background for inputs and buttons */
+  color: #f5e0dc; /* Soft cream text */
+  border: 1px solid #b09a93; /* Neutral, warm border */
+  width: 100%; /* Makes input elements take up the full width of the form */
+  max-width: 400px; /* Optional: limits the width for a cleaner look */
+}
+
+input:focus, select:focus, button:focus {
+  border-color: #f4a300; /* Golden-yellow accent for focus state */
+}
+
+pre {
+  background: #333344; /* Muted dark background for code block */
+  padding: 10px;
+  border: 1px solid #b09a93; /* Matching warm border */
+  color: #f5e0dc; /* Soft cream text for code */
+}
+
+.field-group {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.removeButton {
+  background: #ca3b3b; /* Light, pastel pink for remove button */
+  color: #1e1e2e; /* Dark text for contrast */
+  border: none;
+  cursor: pointer;
+}
+
+.removeButton:hover {
+  background: #f5b5b5; /* Slightly darker pink when hovered */
+}
+
+/* Button style */
+button {
+  background-color: #7f4db0; /* Soft purple for buttons */
+  border: 1px solid #b09a93; /* Neutral border */
+}
+
+button:hover {
+  background-color: #9e66d5; /* Lighter purple for hover effect */
+}
