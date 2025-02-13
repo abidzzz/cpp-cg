@@ -1,12 +1,17 @@
 body {
   font-family: Arial, sans-serif;
-  margin: 20px;
+  margin: 0;
   background-color: #1e1e2e; /* Dark, muted background for Catppuccin */
   color: #f5e0dc; /* Soft cream text color */
   display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh; /* Ensures the content is vertically centered */
+  flex-direction: column;
+  justify-content: space-between; /* Spreads out elements vertically */
+  min-height: 100vh; /* Ensures the content takes up the full height */
+}
+
+h1 {
+  text-align: center;
+  margin-top: 20px;
 }
 
 form {
@@ -14,8 +19,10 @@ form {
   flex-direction: column;
   gap: 10px;
   max-width: 600px;
-  width: 100%; /* Ensures the form is responsive */
+  width: 100%;
+  margin: 0 auto; /* Centers the form horizontally */
   align-items: center; /* Centers the form elements horizontally */
+  flex-grow: 1; /* Allows the form to take up remaining space */
 }
 
 input, select, button {
@@ -24,8 +31,8 @@ input, select, button {
   background-color: #575279; /* Soft lavender background for inputs and buttons */
   color: #f5e0dc; /* Soft cream text */
   border: 1px solid #b09a93; /* Neutral, warm border */
-  width: 100%; /* Makes input elements take up the full width of the form */
-  max-width: 400px; /* Optional: limits the width for a cleaner look */
+  width: 100%;
+  max-width: 400px;
 }
 
 input:focus, select:focus, button:focus {
@@ -39,14 +46,8 @@ pre {
   color: #f5e0dc; /* Soft cream text for code */
 }
 
-.field-group {
-  display: flex;
-  gap: 10px;
-  margin-bottom: 10px;
-}
-
 .removeButton {
-  background: #ca3b3b; /* Light, pastel pink for remove button */
+  background: #ca3b3b;
   color: #1e1e2e; /* Dark text for contrast */
   border: none;
   cursor: pointer;
@@ -63,5 +64,24 @@ button {
 }
 
 button:hover {
+  background-color: #9e66d5; /* Lighter purple for hover effect */
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+#downloadButton {
+  display: block;
+  margin: 20px auto;
+  background-color: #7f4db0; /* Soft purple for buttons */
+  padding: 10px 20px;
+  border: 1px solid #b09a93; /* Neutral border */
+  color: #f5e0dc; /* Cream text */
+  cursor: pointer;
+}
+
+#downloadButton:hover {
   background-color: #9e66d5; /* Lighter purple for hover effect */
 }
