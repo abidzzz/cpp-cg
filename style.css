@@ -94,3 +94,10 @@ h2 {
 #downloadButton:hover {
   background-color: #9e66d5; /* Lighter purple for hover effect */
 }
+.button-container {
+  display: flex;
+  gap: 10px; /* Adds space between the buttons */
+  justify-content: center; /* Centers the buttons horizontally */
+  width: 100%; /* Ensures the container takes up the full width */
+  max-width: 400px; /* Limits the width to match the form */
+}
