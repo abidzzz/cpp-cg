@@ -14,7 +14,7 @@ document.getElementById('addVariableButton').addEventListener('click', function 
           <option value="void">void</option>
       </select>
       <input type="text" class="variableName" placeholder="Variable name (e.g., x)">
-      <button type="button" class="removeButton">Remove</button>
+      <button type="button" class="removeButton"><i class="fas fa-trash"></i></button>
     `;
     fieldsContainer.appendChild(newFieldGroup);
   });
@@ -34,8 +34,8 @@ document.getElementById('addVariableButton').addEventListener('click', function 
           <option value="bool">bool</option>  
           <option value="void">void</option>
         </select>
-      <input type="text" class="inputStatement" placeholder="Input statement (e.g., cin >> x)">
-      <button type="button" class="removeButton">Remove</button>
+      <input type="text" class="inputStatement" placeholder="Input statement (e.g., name)">
+      <button type="button" class="removeButton"><i class="fas fa-trash"></i></button>
     `;
     fieldsContainer.appendChild(newFieldGroup);
   });
