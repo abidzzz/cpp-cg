@@ -38,7 +38,6 @@ input, select, button {
   border: none;
 }
 
-
 select {
   width: auto; /* Ensures the dropdown is not stretched out */
   background-color: #322f44;
@@ -55,11 +54,35 @@ pre {
   color: #f5e0dc; /* Soft cream text for code */
 }
 
+/* Style for the field group */
+.field-group {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Adds space between elements */
+  width: 100%;
+  max-width: 400px;
+}
+
+/* Style for the variable name input */
+.variableName {
+  flex-grow: 1; /* Allows the input to take up remaining space */
+  height: 40px; /* Makes the input bar taller */
+  padding: 10px; /* Adds padding inside the input */
+}
+
+/* Style for the remove button */
 .removeButton {
   background: #ca3b3b;
   color: #1e1e2e; /* Dark text for contrast */
   border: none;
   cursor: pointer;
+  padding: 10px; /* Smaller padding for the trash icon */
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px; /* Fixed width for the trash button */
+  height: 40px; /* Fixed height for the trash button */
 }
 
 .removeButton:hover {
